@@ -1,13 +1,13 @@
 const mysql = require("mysql");
 const inquirer = require("inquirer");
-const cTable = require ('console.table')
+// const cTable = require ('console.table')
 
 const connection = mysql.createConnection({
   host: "localhost",
   port: 3306,
   user: "root",
-  password: "12345678",
-  database: "employees_db"
+  password: "",
+  database: "employee_db"
 });
 
 connection.connect(function (err) {
@@ -156,12 +156,7 @@ function addEmployee() {
             return choiceArray;
           },
         },
-        // {
-        //   name: "manager",
-        //   type: "list",
-        //   choices: employeeArray,
-        //   message: "Who is the employee's manager?"
-        // }
+        
       ])
       .then(function (data) {
 
@@ -172,13 +167,7 @@ function addEmployee() {
           }
         }
 
-        // let chosenManager;
-        // for (let i = 0; i < results.length; i++) {
-        //   if (`${results[i].first_name} ${results[i].last_name}` === data.employee){
-        //     chosenManager = results[i]
-        //   }
-        // }
-
+        
         const query = connection.query(
           "INSERT INTO employees SET ?", {
             first_name: data.first_name,

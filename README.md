@@ -1,5 +1,5 @@
 # employee-tracker
-(https://i.imgur.com/R5vSedo.png)
+![CLI](https://i.imgur.com/R5vSedo.png)
 
 # Table of Contents
 
